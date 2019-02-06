@@ -17,7 +17,7 @@ public class Test {
         SqlSessionFactory sessionFactory = new SqlSessionFactoryBuilder().build(reader);
         SqlSession session = sessionFactory.openSession();
         TweetDao tweetDao = session.getMapper(TweetDao.class);
-        String topic = "china";
+        String topic = "huawei";
         ArrayList<MyTweet> tweets = TweetManager.getTweets(topic);
         StanfordEnglishNlpExample.init();
         for(MyTweet tweet : tweets) {
