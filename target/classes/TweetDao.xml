@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.TweetDao">
+    <select id="getTweetById" parameterType="int" resultType="pojo.MyTweet">
+        select * from tweet where tweetID=#{tweetID}
+    </select>
+    <select id="getAllTweet" resultType="pojo.MyTweet">
+        select * from tweet
+    </select>
+    <insert id="insertMyTweet" parameterType="pojo.MyTweet">
+        insert into tweet (tweetID, username, url, location, text, sentiment) values (#{tweetID},#{username},#{url},#{location},#{text},#{sentiment})
+    </insert>
+</mapper>
